@@ -1,0 +1,38 @@
+:root{
+    --color_button :rgb(83, 154, 247);
+}
+*{
+
+    box-sizing: border-box;
+}
+body{
+    background-image: url();
+    font-size: 20px;
+    margin: 0;
+}
+button{
+    cursor: pointer;
+    background-color: var(--color_button);
+    margin: 10px;
+    padding: 15px;
+    width: 100px;
+    border-radius: 25px;
+}
+img{
+    margin: 5px;
+    max-width: 150px;
+}
+.images{
+display: flex;
+justify-content: center;
+
+}
+header .container{
+    display: flex;
+    justify-content: end;
+}
+#id_h1{
+    color: var(--color_button);
+    text-align: center;
+   /* border: 2px solid red; */
+}

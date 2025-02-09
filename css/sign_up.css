@@ -1,0 +1,38 @@
+:root{
+    --color_button :rgb(83, 154, 247);
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #437892c2;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+form{
+    display: grid;
+    width: 200px;
+    grid-template-columns: 1fr;
+}
+label{
+    width: 200px;
+    margin: 10px;
+}
+input{
+    border-radius: 15px;
+    padding: 5px;
+}
+button{
+    background-color: var(--color_button);
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 15px;
+}
+.container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}

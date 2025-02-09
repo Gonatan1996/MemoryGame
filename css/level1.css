@@ -1,0 +1,66 @@
+:root{
+    --color_button :rgb(83, 154, 247);
+}
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+}
+.btn{
+    cursor: pointer;
+    background-color: var(--color_button);
+    margin: 10px;
+    padding: 15px;
+    width: 100px;
+    border-radius: 25px;
+}
+footer{
+    display: flex;
+    justify-content: center;
+}
+@keyframes flip {
+    0% {
+      transform: rotatey(0deg);
+    }
+    100% {
+      transform: rotatey(180deg);
+    }
+  }
+.flip{
+    animation: flip 2s infinite linear;
+}
+
+.hidden{
+    display: none;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+.img_btn{
+    width: 130px;
+    height: 180px;
+    
+}
+.images{
+    
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6,140px);
+    gap: 10px;
+}
+.images button{
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+
+
+
+
+
