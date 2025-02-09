@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sign_up.css">
     <script src="js/log_in.js" defer></script>
+    <!-- <script defer src="js/User.js"></script> -->
 
     <title>log_in</title>
 </head>
 <body>
     <div class="container">
-        <form action="#">
+        <form action="#" id="my_Form">
             
             <label for="email">enter your Email :</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" name="email" required>
             <label for="password">enter your Password :</label>
-            <input type="password" id="password" minlength="8" required>
+            <input type="password" id="password" name="password" minlength="6" required>
             <button type="submit">log in</button>
             <button id="btn_back" type="button">back</button>
             

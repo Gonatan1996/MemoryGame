@@ -31,8 +31,16 @@ button{
     padding: 8px;
     border-radius: 15px;
 }
+p{
+    
+    background-color: red;
+    color: white;
+}
 .container{
     margin: auto;
     display: flex;
     justify-content: center;
+}
+.hidden{
+    display: none;
 }
