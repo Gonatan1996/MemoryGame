@@ -30,6 +30,11 @@ footer{
 .flip{
     animation: flip 2s infinite linear;
 }
+.win{
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .hidden{
     display: none;

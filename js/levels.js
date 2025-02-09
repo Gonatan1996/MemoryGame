@@ -1,7 +1,7 @@
 let level = document.querySelector("#id_level").textContent
 let imgArr = []
 let flippedCards = []
-// const cards = document.querySelectorAll('.card');
+let flipped = []
 let check = false
 let couples = 0;
 let paus = false ; 
@@ -17,16 +17,8 @@ const init = ()=>{
     createArrayImg()
     eventListener()
     timeOfGame()
-     startTimer()
-    
-
-// for (let index = 0; index < imgArr.length; index++) {
-//     console.log(imgArr[index]);
-    
-    
-// }
-
-    
+    startTimer(3000)
+    userName()
 }
 const eventListener = ()=>{
     for (let i = 0; i < imgArr.length; i++) {
@@ -42,11 +34,9 @@ const eventListener = ()=>{
 
 const flipCard = (curentBtn)=>{
     if(check || paus)return;
-    // console.log(curentBtn);
     flipCardToImg(curentBtn)
 
     if (!flippedCards.includes(curentBtn)) {
-        // curentBtn.classList.add("flipped")
         flippedCards.push(curentBtn)
     }
     if (flippedCards.length === 2) {
@@ -62,6 +52,10 @@ const checkMatch = ()=>{
     flippedCards.splice(0,2)
     let timer = setTimeout(()=>{
         if (btn1.getAttribute("data-id_img") === btn2.getAttribute("data-id_img")) {
+            flipped.push(btn1,btn2)
+            if (flipped.length == 2) {
+                endLevel()
+            }
             check = false
             couples++
             updateCouples()
@@ -74,6 +68,12 @@ const checkMatch = ()=>{
     },2000)
 
 return false
+}
+const userName = ()=>{
+    let user = JSON.parse(localStorage.getItem("currentUser"))
+    console.log(user);
+    
+    document.querySelector("#id_user_name").textContent = user.name
 }
 
 
@@ -119,7 +119,7 @@ paus = boolean
 if (paus) {
     breakTimer()
 }else{
-    startTimer()
+    startTimer(0)
 }
 }
 
@@ -131,19 +131,34 @@ let timerOfGame = document.querySelector("#id_timer")
 // console.log(timerOfGame);
 timerOfGame.innerHTML = `${String(minute).padStart(2, '0')}:${String(second).padStart(2, '0')}` 
 }
-const startTimer = ()=>{
-    if (!timer) {
-        timer = setInterval(()=>{
-            count++
-            timeOfGame()
-        },1000)
-    }
+const startTimer = (time)=>{
+    setTimeout(() => {
+        if (!timer) {
+            timer = setInterval(()=>{
+                count++
+                timeOfGame()
+            },1000)
+        }   
+    }, time);
+    
 }
 const breakTimer = ()=>{
 clearInterval(timer)
 timer = null
 }
-
+const endLevel = ()=>{
+    breakTimer()
+    document.querySelectorAll(".container").forEach(container => {
+        container.classList.add("hidden");
+    });
+    document.querySelector(".win").classList.remove("hidden")
+}
+const startAgain = (level)=>{
+    window.location.href = `level${level}.html`
+}
+const nextStage = (level)=>{
+    window.location.href = `level${level}.html`
+}
 
 
 

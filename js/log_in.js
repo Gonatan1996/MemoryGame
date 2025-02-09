@@ -19,9 +19,11 @@ const formConversion_log = ()=>{
         const formData = new FormData(form_log)
         data_log = Object.fromEntries(formData.entries())
         if (checkUser(data_log)) {
-            alert(5156189561891)
             window.location.href = "../level1.html"
-         }
+         }else {
+            alert("אימייל או סיסמה שגויים! נסה שוב.");
+        }
+        
     })
 }
 
@@ -29,14 +31,21 @@ const checkUser = (data_log)=>{
     let bool = false
     if (checkLocal() != null) {
         let usOut = getLocal()
+        alert(usOut)
         usOut.forEach(element => {
+            alert(element.email)
+            alert(data_log.email)
             if (checkEmail_log(element.email,data_log.email) && checkPass_log(element.password,data_log.password)) {
+                changeLocalCurrentUser(element)
             bool = true
         }
     });
     }
 
     return bool
+}
+const changeLocalCurrentUser = (user)=>{
+    localStorage.setItem("currentUser",JSON.stringify(user))
 }
 
 
