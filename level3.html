@@ -10,6 +10,7 @@
 <body>
     <header>
         <div class="nav">
+                <h2>Wrongs : <span id="id_wrongs">0</span></h2>
             <h2>Couples : <span id="id_coples">0</span></h2>
             <h2>Level : <span id="id_level">3</span></h2>
             <h2>User name : <span id="id_user_name"></span></h2>
@@ -40,14 +41,29 @@
                 <button class="card" id="pic_15"><img src="images/card_blue.png" alt="card_blue"></button>
                 <button class="card" id="pic_16"><img src="images/card_blue.png" alt="card_blue"></button>
                 <button class="card" id="pic_17"><img src="images/card_blue.png" alt="card_blue"></button>
-                <!-- <button class="img_btn" id="18"><img data-id_img="pic18"  src="images/card_blue.png" alt="card_blue"></button> -->
             </div>
         </div>
         <div class="win hidden">
-            <h1>you winner</h1>
+            <h1>your record is :</h1>
+            <table>
+                <tr>
+                    <th>Moves</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td id="id_moves"></td>
+                    <td id="id_time"></td>
+                </tr>
+            </table>
             <div>
-                <button class="btn" onclick="startAgain(3)">start again</button>
-                <button class="btn" onclick="nextStage(4)">next stage</button>
+                <button class="btn" onclick="startAgain(1)">start again</button>
+                <button class="btn" onclick="nextStage(2)">next stage</button>
+            </div>
+        </div>
+        <div class="loss hidden">
+            <h1 style="color: red;">time is over !</h1>
+            <div>
+                <button class="btn" onclick="startAgain(1)">try again</button>
             </div>
         </div>
     </main>

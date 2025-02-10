@@ -1,0 +1,15 @@
+:root{
+    --color_button :rgb(83, 154, 247);
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: var(--color_button);
+}
+li{
+  margin: 8px;  
+    
+}

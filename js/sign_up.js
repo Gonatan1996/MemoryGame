@@ -31,7 +31,6 @@ const formConversion = ()=>{
 const checkEmail =(email)=>{
     let bool = true
     let arr = getLocal()
-    alert(arr)
     if (arr.length > 0) {          
         bool = !arr.some(user => user.email === email);
     }

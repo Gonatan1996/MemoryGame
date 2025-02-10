@@ -15,6 +15,24 @@ img{
     width: 100px;
     border-radius: 25px;
 }
+header{
+    text-align: center;
+    margin-bottom: 8px;
+}
+table{
+    margin-bottom: 5px;
+    width: 20%;
+}
+th { 
+    color: var(--color_button);
+    font-size: 18px;
+}
+
+td {
+    text-align: center;
+    background: #f9f9f9;
+    font-size: 16px;
+}
 footer{
     display: flex;
     justify-content: center;
@@ -35,14 +53,22 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+.loss{
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .hidden{
     display: none;
 }
 .nav{
-    display: flex;
+    background-color: var(--color_button);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding:0 8px;
+    border-radius: 20px;
     gap: 70px;
 }
 .card{
@@ -50,8 +76,7 @@ footer{
     height: 180px;
     
 }
-.images{
-    
+.images{   
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(6,140px);
@@ -63,6 +88,11 @@ footer{
     border: none;
     background: none;
 }
+
+
+
+
+
 
 
 
