@@ -46,7 +46,7 @@ footer{
     }
   }
 .flip{
-    animation: flip 2s infinite linear;
+    animation: flip 1s infinite linear;
 }
 .win{
     display:  flex;

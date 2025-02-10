@@ -26,7 +26,7 @@ const sortLocal1 = () => {
     if (users != null) {
         sortGridsMoves1 = grids.sort((a, b) => {
             if (a.grid.level1.moves != b.grid.level1.moves) {
-                return a.grid.level1.moves - b.grid.level1.moves
+                return Number(b.grid.level1.moves) - Number(a.grid.level1.moves)
             }
             return Number(a.grid.level1.timer) - Number(b.grid.level1.timer)
         });
@@ -83,21 +83,32 @@ const winner = (user) => {
     }
 }
 
-const displayList = () => {
-    for (let i = 0; i < sortGridsMoves1.length; i++) {
-        document.querySelector(`#li1_${i+1}`).textContent = winner(sortGridsMoves1[i]) || ""
-    }
-    for (let i = 0; i < sortGridsMoves2.length; i++) {
-        document.querySelector(`#li2_${i+1}`).textContent = winner(sortGridsMoves2[i]) || ""
-    }
-    for (let i = 0; i < sortGridsMoves3.length; i++) {
-        document.querySelector(`#li3_${i+1}`).textContent = winner(sortGridsMoves3[i]) || ""
-    }
-    for (let i = 0; i < sortGridsMoves4.length; i++) {
-        document.querySelector(`#li4_${i+1}`).textContent = winner(sortGridsMoves4[i]) || ""
-    }
+// const displayList = () => {
+//     for (let i = 0; i < sortGridsMoves1.length; i++) {
+//         document.querySelector(`#li1_${i+1}`).textContent = winner(sortGridsMoves1[i]) || ""
+//     }
+//     for (let i = 0; i < sortGridsMoves2.length; i++) {
+//         document.querySelector(`#li2_${i+1}`).textContent = winner(sortGridsMoves2[i]) || ""
+//     }
+//     for (let i = 0; i < sortGridsMoves3.length; i++) {
+//         document.querySelector(`#li3_${i+1}`).textContent = winner(sortGridsMoves3[i]) || ""
+//     }
+//     for (let i = 0; i < sortGridsMoves4.length; i++) {
+//         document.querySelector(`#li4_${i+1}`).textContent = winner(sortGridsMoves4[i]) || ""
+//     }
     
-}
+// }
+const displayList = () => {
+    const lists = [sortGridsMoves1, sortGridsMoves2, sortGridsMoves3, sortGridsMoves4];
+
+    lists.forEach((list, index) => {
+        list.forEach((item, i) => {
+            const liElement = document.querySelector(`#li${index + 1}_${i + 1}`);
+                liElement.textContent = winner(item) || "";
+        });
+    });
+};
+
 
 
 

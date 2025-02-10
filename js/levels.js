@@ -55,7 +55,7 @@ const checkMatch = () => {
             flipped.push(btn1, btn2)
             couples++
             updateCouples()
-            if (flipped.length == 2) {
+            if (flipped.length == 18) {
                 endLevel(0)
             }
             check = false
@@ -67,7 +67,7 @@ const checkMatch = () => {
             btn2.firstChild.className = ""
         }
         check = false
-    }, 2000)
+    }, 1000)
 
     return false
 }
@@ -91,7 +91,7 @@ const animaitionFlip = (curentBtn) => {
         img.className = "flip"
         let timer = setTimeout(() => {
             img.className = "hidden"
-        }, 1000)
+        }, 500)
     }
 
 }
@@ -246,16 +246,16 @@ const timerOfNum = (users_level) => {
 const endGameOfTime = () => {
     switch (level) {
         case "1":
-            if (minute == 1) endLevel(level)
+            if (count == 150) endLevel(level)
             break;
         case "2":
-            if (second == 50) endLevel(level)
+            if (minute == 2) endLevel(level)
             break;
         case "3":
-            if (second == 40) endLevel(level)
+            if (count == 90) endLevel(level)
             break;
         case "4":
-            if (second == 30) endLevel(level)
+            if (minute == 1) endLevel(level)
             break;
 
 
