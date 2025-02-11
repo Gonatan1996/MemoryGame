@@ -146,12 +146,16 @@ const back = () => {
         case 2:
             window.location.href = "../level2.html"
             break;
-        case 3:
-            window.location.href = "../level3.html"
-            break;
+            case 3:
+                window.location.href = "../level3.html"
+                break;
         case 4:
             window.location.href = "../level4.html"
             break;
+            default:
+                window.location.href = "../index.html"
+                break;
+                
 
     }
 }
