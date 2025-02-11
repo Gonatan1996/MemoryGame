@@ -1,23 +1,18 @@
 :root{
     --color_button :rgb(83, 154, 247);
 }
+header{
+    text-align: center;
+    margin-bottom: 8px;
+}
 img{
     position: absolute;
     top: 0;
     left: 0;
     width: 130px;
 }
-.btn{
-    cursor: pointer;
-    background-color: var(--color_button);
-    margin: 10px;
-    padding: 15px;
-    width: 100px;
-    border-radius: 25px;
-}
-header{
-    text-align: center;
-    margin-bottom: 8px;
+a{
+    text-decoration: none;
 }
 table{
     margin-bottom: 5px;
@@ -37,14 +32,31 @@ footer{
     display: flex;
     justify-content: center;
 }
+.nav{
+    background-color: var(--color_button);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding:0 8px;
+    border-radius: 20px;
+    gap: 70px;
+}
+.btn{
+    cursor: pointer;
+    background-color: var(--color_button);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 25px;
+    width: 80px;
+}
 @keyframes flip {
     0% {
       transform: rotatey(0deg);
     }
     100% {
-      transform: rotatey(180deg);
+        transform: rotatey(180deg);
     }
-  }
+}
 .flip{
     animation: flip 1s infinite linear;
 }
@@ -62,19 +74,9 @@ footer{
 .hidden{
     display: none;
 }
-.nav{
-    background-color: var(--color_button);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding:0 8px;
-    border-radius: 20px;
-    gap: 70px;
-}
 .card{
     width: 130px;
-    height: 180px;
-    
+    height: 180px;    
 }
 .images{   
     display: grid;
@@ -87,6 +89,66 @@ footer{
     cursor: pointer;
     border: none;
     background: none;
+}
+#id_list{
+    width: 150px;
+}
+@media screen and (max-width:900px){
+    img{
+        width: 95px;
+    }
+    .card{
+        width: 90px;
+        height: 120px;    
+    }
+    .images{   
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(6,100px);
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+}
+@media screen and (max-width:700px){
+    .nav{
+        display: block;
+        margin: 4px;
+    }
+    img{
+        width: 80px;
+    }
+    .card{
+        width: 80px;
+        height: 100px;    
+    }
+    .images{   
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(6,80px);
+        gap: 10px;
+    }
+    
+}
+@media screen and (max-width:500px){
+    .nav{
+        display: block;
+        margin: 4px;
+    }
+    img{
+        width: 65px;
+    }
+    .card{
+        width: 65px;
+        height: 90px;    
+    }
+    .images{   
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(6,70px);
+        gap: 1px;
+    }
+    
 }
 
 

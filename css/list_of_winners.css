@@ -1,15 +1,24 @@
 :root{
     --color_button :rgb(83, 154, 247);
 }
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+    margin: 0;
+}
+header,main,footer{
+    margin-left: 10px;
 }
 h1{
     color: var(--color_button);
 }
 li{
-  margin: 8px;  
+  margin: 4px;  
     
+}
+button{
+    cursor: pointer;
+    background-color: var(--color_button);
+    margin: 10px;
+    padding: 15px;
+    width: 100px;
+    border-radius: 25px;
 }

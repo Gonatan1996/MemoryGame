@@ -10,13 +10,12 @@
 <body>
     <header>
         <div class="nav">
-                <h2>Wrongs : <span id="id_wrongs">0</span></h2>
-            <h2>Couples : <span id="id_coples">0</span></h2>
-            <h2>Level : <span id="id_level">3</span></h2>
             <h2>User name : <span id="id_user_name"></span></h2>
+            <h2>Level : <span id="id_level">1</span></h2>
+            <h2>Couples : <span id="id_coples">0</span></h2>
+            <h2>Wrongs : <span id="id_wrongs">0</span></h2>
             <h2>Timer : <span id="id_timer"></span></h2>
         </div>
-
 
 
     </header>
@@ -58,12 +57,13 @@
             <div>
                 <button class="btn" onclick="startAgain(3)">start again</button>
                 <button class="btn" onclick="nextStage(4)">next stage</button>
+                <button class="btn" id="id_list"><a href="list_of_winners.html">list of winners</a></button>
             </div>
         </div>
         <div class="loss hidden">
             <h1 style="color: red;">time is over !</h1>
             <div>
-                <button class="btn" onclick="startAgain(1)">try again</button>
+                <button class="btn" onclick="startAgain(3)">try again</button>
             </div>
         </div>
     </main>
@@ -71,6 +71,7 @@
         <div class="container">
         <button class="btn" onclick="stopped(true)">stop</button>
         <button class="btn" onclick="stopped(false)">start</button>
+        <button class="btn" id="id_list"><a href="level3.html">start again</a></button>
         </div>
 
 

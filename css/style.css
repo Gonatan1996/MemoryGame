@@ -2,7 +2,6 @@
     --color_button :rgb(83, 154, 247);
 }
 *{
-
     box-sizing: border-box;
 }
 body{
@@ -22,10 +21,21 @@ img{
     margin: 5px;
     max-width: 150px;
 }
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer button{
+    width: 150px;
+}
+a{
+    text-decoration: none;
+}
 .images{
-display: flex;
-justify-content: center;
-
+    display: flex;
+    justify-content: center;
+    
 }
 header .container{
     display: flex;
@@ -34,5 +44,18 @@ header .container{
 #id_h1{
     color: var(--color_button);
     text-align: center;
-   /* border: 2px solid red; */
+}
+@media screen and (max-width: 800px) {
+    
+    img{
+        margin: 5px;
+        max-width: 100px;
+    }
+}
+@media screen and (max-width: 550px) {
+    
+    img{
+        margin: 5px;
+        max-width: 70px;
+    }
 }

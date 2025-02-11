@@ -17,16 +17,49 @@ let user = JSON.parse(localStorage.getItem("currentUser"));
 const init = () => {
     createArrayImg()
     eventListener()
+    updateBackgroundSize();
     timeOfGame()
     startTimer(1000)
     userName()
+}
+
+const updateBackgroundSize = () => {
+    if (window.innerWidth < 500) {
+        for (let i = 0; i < imgArr.length; i++) {
+            let curentBtn = document.querySelector(`#pic_${i}`)
+            curentBtn.style.backgroundSize = "65px 90px"
+        }
+    }
+    else if (window.innerWidth < 700) {
+        for (let i = 0; i < imgArr.length; i++) {
+            let curentBtn = document.querySelector(`#pic_${i}`)
+            curentBtn.style.backgroundSize = "80px 100px"
+        }
+    }
+    else if (window.innerWidth < 900) {
+        for (let i = 0; i < imgArr.length; i++) {
+            let curentBtn = document.querySelector(`#pic_${i}`)
+            curentBtn.style.backgroundSize = "90px 125px"
+        }
+    }
+    else {
+
+        for (let i = 0; i < imgArr.length; i++) {
+            let curentBtn = document.querySelector(`#pic_${i}`)
+            curentBtn.style.backgroundSize = "130px 178px"
+        }
+
+    }
+}
+window.addEventListener("resize", updateBackgroundSize);
+const responsivi = () => {
 }
 const eventListener = () => {
     for (let i = 0; i < imgArr.length; i++) {
         let curentBtn = document.querySelector(`#pic_${i}`)
         curentBtn.setAttribute("data-id_img", `url("${imgArr[i]}")`)
         curentBtn.style.backgroundImage = `url("${imgArr[i]}")`;
-        curentBtn.style.backgroundSize = "130px 180px"
+        curentBtn.style.backgroundSize = "130px 178px"
         curentBtn.addEventListener("click", () => {
             flipCard(curentBtn)
         })
@@ -39,7 +72,9 @@ const flipCard = (curentBtn) => {
     flipCardToImg(curentBtn)
 
     if (!flippedCards.includes(curentBtn)) {
-        flippedCards.push(curentBtn)
+        if (!flipped.includes(curentBtn)) {
+            flippedCards.push(curentBtn)
+        }
     }
     if (flippedCards.length === 2) {
         check = true
@@ -169,7 +204,7 @@ const endLevel = (loss) => {
         return;
     }
     updateGridOfCurrentUser(level)
-
+    updateLevelInUsers(level)
     document.querySelectorAll(".container").forEach(container => {
         container.classList.add("hidden");
     });
@@ -225,7 +260,6 @@ const checkGridLoss = (users_level) => {
         updateGridInUsers()
     }
     else if (Number(users_level.moves) > couples + wrongs) {
-
         updateGrid(users_level)
         localStorage.setItem("currentUser", JSON.stringify(user))
         updateGridInUsers()
@@ -236,6 +270,19 @@ const checkGridLoss = (users_level) => {
         updateGridInUsers()
     }
 
+}
+
+const updateLevelInUsers = (level) => {
+    let users = JSON.parse(localStorage.getItem("Users"))
+    users.forEach((item) => {
+        if (user.email === item.email) {
+            item.level = (Number(level) + 1)
+            user.level = (Number(level) + 1)
+        }
+    })
+
+    localStorage.setItem("currentUser", JSON.stringify(user))
+    localStorage.setItem("Users", JSON.stringify(users))
 }
 
 const timerOfNum = (users_level) => {
@@ -257,24 +304,8 @@ const endGameOfTime = () => {
         case "4":
             if (minute == 1) endLevel(level)
             break;
-
-
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

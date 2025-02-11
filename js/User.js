@@ -1,22 +1,22 @@
 class User {
-    constructor(_name,_email,_password){
+    constructor(_name, _email, _password) {
         this.name = _name
         this.email = _email
         this.password = _password
         this.grid = new Grid()
-
+        this.level = 1
     }
 }
 class Grid {
     constructor() {
-        this.level1 = new Laval();
-        this.level2 = new Laval();
-        this.level3 = new Laval();
-        this.level4 = new Laval();
+        this.level1 = new Level();
+        this.level2 = new Level();
+        this.level3 = new Level();
+        this.level4 = new Level();
     }
 }
-class Laval{
-    constructor(){
+class Level {
+    constructor() {
         this.timer = 0
         this.moves = 0
     }
