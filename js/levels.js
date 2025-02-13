@@ -87,6 +87,7 @@ const checkMatch = () => {
     flippedCards.splice(0, 2)
     setTimeout(() => {
         if (btn1.getAttribute("data-id_img") === btn2.getAttribute("data-id_img")) {
+            sound("sounds/couples.mp3")
             flipped.push(btn1, btn2)
             couples++
             updateCouples()
@@ -96,6 +97,7 @@ const checkMatch = () => {
             check = false
             return true
         } else {
+            sound("sounds/wrong.mp3")
             wrongs++
             updateWromgs()
             btn1.firstChild.className = ""
@@ -120,9 +122,15 @@ const flipCardToImg = (curentBtn) => {
     animaitionFlip(curentBtn)
 }
 
+const sound = (path)=>{
+    const audio = new Audio(path)
+    audio.play()
+}
+
 const animaitionFlip = (curentBtn) => {
     let img = curentBtn.firstChild
     if (img.className != "hidden") {
+        sound("sounds/flip_card.mp3")
         img.className = "flip"
         let timer = setTimeout(() => {
             img.className = "hidden"
