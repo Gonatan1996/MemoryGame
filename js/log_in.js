@@ -6,14 +6,10 @@ let currentUser;
 const init_log = () => {
     formConversion_log()
 }
-
-
 document.querySelector("#btn_back").addEventListener("click", () => {
     window.location.href = "./index.html";
 
 })
-
-
 const formConversion_log = () => {
     form_log.addEventListener("submit", (event) => {
         event.preventDefault()
@@ -39,7 +35,6 @@ const formConversion_log = () => {
         }
     })
 }
-
 const checkUser = (data_log) => {
     let bool = false
     if (checkLocal() != null) {
@@ -53,8 +48,6 @@ const checkUser = (data_log) => {
     }
     return bool
 }
-
-
 const checkEmail_log = (email, data_email) => {
     return email === data_email
 }
@@ -68,8 +61,5 @@ const getLocal = () => {
 const checkLocal = () => {
     return getLocal()
 }
-
-
-
 
 init_log()

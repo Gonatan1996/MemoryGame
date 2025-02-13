@@ -1,9 +1,9 @@
 let users = JSON.parse(localStorage.getItem("Users")) || null
-   
 let sortGridsMoves1;
 let sortGridsMoves2;
 let sortGridsMoves3;
 let sortGridsMoves4;
+let currentLevel = JSON.parse(localStorage.getItem("currentUser"))
 
 if (users != null) {
 sortGridsMoves1 = [...users];
@@ -11,10 +11,6 @@ sortGridsMoves2 = [...users];
 sortGridsMoves3 = [...users];
 sortGridsMoves4 = [...users];
 }
-
-let currentLevel = JSON.parse(localStorage.getItem("currentUser"))
-
-
 const list = () => {
     sortLocal()
     displayList()
@@ -27,7 +23,6 @@ const sortLocal = () => {
     sortLocal4()
 
 }
-
 const sortLocal1 = () => {
     if (users != null) {
 
@@ -130,8 +125,6 @@ const winner = (user, level) => {
             return ` ${name},  moves: ${moves} timer: ${timer}`
     }
 }
-
-
 const displayList = () => {
     if (users != null) {
         
@@ -145,8 +138,6 @@ const displayList = () => {
         });
     }
 };
-
-
 const back = () => {
     if (users == null) {
         window.location.href = "../index.html"

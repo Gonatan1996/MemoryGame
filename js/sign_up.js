@@ -11,8 +11,6 @@ const init = () => {
     formConversion()
 
 }
-
-
 const formConversion = () => {
     form.addEventListener("submit", (event) => {
         event.preventDefault()
@@ -28,7 +26,6 @@ const formConversion = () => {
         }
     })
 }
-
 const checkEmail = (email) => {
     let bool = true
     let arr = getLocal()
@@ -51,21 +48,13 @@ const checkPass = (pass, passAgain) => {
     }
     return bool
 }
-const getLocal = () => JSON.parse(localStorage.getItem("Users")) || [];
-
 const checkLocal = () => {
     return getLocal()
 }
-
-
+const getLocal = () => JSON.parse(localStorage.getItem("Users")) || [];
 const changeLocalUsers = () => localStorage.setItem("Users", JSON.stringify(users))
-
 const changeLocalCurrentUser = (user) => {
     localStorage.setItem("currentUser", JSON.stringify(user))
 }
-
-
-
-
 
 init()
