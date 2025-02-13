@@ -1,8 +1,11 @@
 let users = JSON.parse(localStorage.getItem("Users")) || null
-let sortGridsMoves1 = [...users] || [];
-let sortGridsMoves2 = [...users] || [];
-let sortGridsMoves3 = [...users] || [];
-let sortGridsMoves4 = [...users] || [];
+if (users != null) {
+    
+    let sortGridsMoves1 = [...users] || [];
+    let sortGridsMoves2 = [...users] || [];
+    let sortGridsMoves3 = [...users] || [];
+    let sortGridsMoves4 = [...users] || [];
+}
 let currentLevel = JSON.parse(localStorage.getItem("currentUser"))
 
 
@@ -124,14 +127,17 @@ const winner = (user, level) => {
 
 
 const displayList = () => {
-    const lists = [sortGridsMoves1, sortGridsMoves2, sortGridsMoves3, sortGridsMoves4];
-
-    lists.forEach((list, index) => {
-        list.forEach((item, i) => {
-            const liElement = document.querySelector(`#li${index + 1}_${i + 1}`);
-            liElement.textContent = winner(item, index + 1) || "";
+    if (users != null) {
+        
+        const lists = [sortGridsMoves1, sortGridsMoves2, sortGridsMoves3, sortGridsMoves4];
+        
+        lists.forEach((list, index) => {
+            list.forEach((item, i) => {
+                const liElement = document.querySelector(`#li${index + 1}_${i + 1}`);
+                liElement.textContent = winner(item, index + 1) || "";
+            });
         });
-    });
+    }
 };
 
 
