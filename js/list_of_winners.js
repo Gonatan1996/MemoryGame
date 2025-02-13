@@ -1,11 +1,17 @@
 let users = JSON.parse(localStorage.getItem("Users")) || null
+   
+let sortGridsMoves1;
+let sortGridsMoves2;
+let sortGridsMoves3;
+let sortGridsMoves4;
+
 if (users != null) {
-    
-    let sortGridsMoves1 = [...users] || [];
-    let sortGridsMoves2 = [...users] || [];
-    let sortGridsMoves3 = [...users] || [];
-    let sortGridsMoves4 = [...users] || [];
+sortGridsMoves1 = [...users];
+sortGridsMoves2 = [...users];
+sortGridsMoves3 = [...users];
+sortGridsMoves4 = [...users];
 }
+
 let currentLevel = JSON.parse(localStorage.getItem("currentUser"))
 
 
